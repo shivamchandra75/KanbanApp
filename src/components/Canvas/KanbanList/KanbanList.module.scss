@@ -27,12 +27,23 @@
 
   ul {
     display: grid;
-    & > * {
+    & > *:not(:last-child) {
       margin-bottom: 2rem;
     }
   }
 
   li {
     list-style: none;
+  }
+
+  &__addCardBtn {
+    width: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    border: 1px dashed;
+    border-radius: var(--border-radius-btn);
+    svg {
+      margin-inline: auto;
+    }
   }
 }

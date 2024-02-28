@@ -1,12 +1,11 @@
 import { useDispatch } from "react-redux";
-import { MoreVertical, Plus } from "react-feather";
+import { Plus } from "react-feather";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-// import { addNewCard, deleteList } from "../../redux/MainListSlice";
 import { list_addNewCard, canvas_deleteList } from "../../redux/MainListSlice";
 import Card from "../Card/Card";
 import styles from "./KanbanList.module.scss";
-import { Draggable, Droppable } from "react-beautiful-dnd";
+import { Droppable } from "react-beautiful-dnd";
 
 export default function KanbanList({ list, index }) {
   const dispatch = useDispatch();
@@ -24,14 +23,11 @@ export default function KanbanList({ list, index }) {
       <div className={styles.list__header}>
         <h4>{list.name}</h4>
 
-        <button id={list.id} onClick={handleAddCard}>
-          <Plus />
-        </button>
-
         <button className={styles.deleteBtn} onClick={handleDeleteList}>
           <DeleteIcon />
         </button>
       </div>
+
       <Droppable droppableId={String(list.id)} index={index}>
         {(provided) => (
           <ul {...provided.droppableProps} ref={provided.innerRef}>
@@ -41,6 +37,13 @@ export default function KanbanList({ list, index }) {
               );
             })}
             {provided.placeholder}
+            <button
+              id={list.id}
+              className={styles.list__addCardBtn}
+              onClick={handleAddCard}
+            >
+              <Plus />
+            </button>
           </ul>
         )}
       </Droppable>

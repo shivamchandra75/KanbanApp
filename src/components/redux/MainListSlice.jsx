@@ -268,15 +268,14 @@ const MainListSlice = createSlice({
     },
     /////////////////////////////////////////////////
     handleDragDrop(state, action) {
-      const listCollection = getCurrentListCollection(state);
       const { destination, source } = action.payload;
       const sourceList = getTargetList(source.droppableId, state).cardList;
       const destinationList = getTargetList(
         destination.droppableId,
         state,
       ).cardList;
-      const [returned] = sourceList.splice(source.index, 1);
-      destinationList.splice(destination.index, 0, returned);
+      const [card] = sourceList.splice(source.index, 1);
+      destinationList.splice(destination.index, 0, card);
     },
   },
 });
