@@ -1,0 +1,35 @@
+.tag {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  border-radius: var(--border-radius-btn);
+  border: 1px solid;
+
+  //for increasing specifity as icon library used provides display-inline block and display block in index.scss has lower specificity
+  svg {
+    display: block;
+  }
+}
+
+.red {
+  color: var(--clr-red);
+  background-color: var(--clr-red-hi);
+}
+
+.yellow {
+  color: var(--clr-yellow);
+  background-color: var(--clr-yellow-hi);
+}
+
+.green {
+  color: var(--clr-green);
+  background-color: var(--clr-green-hi);
+}
+
+.blue {
+  color: var(--clr-accent);
+  background-color: var(--clr-blue-hi);
+}

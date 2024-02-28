@@ -1,0 +1,63 @@
+.card {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  background-color: var(--clr-ui-bg);
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 4px var(--clr-box-shadow);
+  &:hover {
+    .card__deleteIcon {
+      opacity: 1;
+    }
+  }
+
+  & > *:not(.assigneeDeadline) {
+    pointer-events: none;
+  }
+
+  &__img {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__deadline {
+    justify-self: flex-end;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+  }
+  &__deleteIcon {
+    background-color: transparent;
+    border: none;
+    opacity: 0;
+    &:hover {
+      color: var(--clr-red);
+    }
+  }
+}
+
+.assigneeDeadline {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.assignee {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: center;
+
+  &__img {
+    max-width: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}

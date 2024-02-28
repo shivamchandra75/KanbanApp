@@ -1,0 +1,30 @@
+.button {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px;
+  align-items: center;
+  padding-inline: 16px;
+  padding-block: 8px;
+  border-radius: var(--border-radius-btn);
+  background-color: var(--clr-ui-bg);
+}
+
+.gray {
+  justify-self: flex-end;
+  border: 2px solid var(--clr-ui-seperator);
+  color: var(--clr-text-faded);
+}
+.blue {
+  border: 2px solid var(--clr-accent);
+  color: var(--clr-accent);
+  justify-self: flex-start;
+  &:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-ui-bg);
+  }
+}
+
+.reverse {
+  direction: rtl;
+  justify-self: auto;
+}

@@ -1,0 +1,19 @@
+.detail {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+
+  & > * {
+    padding-inline: 32px;
+  }
+  &__board_name {
+    border-bottom: 2px solid var(--clr-ui-seperator);
+    padding-block: 16px;
+    font-weight: 700;
+  }
+  &__buttons_parent {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1rem;
+  }
+}

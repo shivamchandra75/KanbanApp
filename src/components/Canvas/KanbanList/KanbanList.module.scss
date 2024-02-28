@@ -1,0 +1,38 @@
+.list {
+  width: 25vw;
+  min-width: 400px;
+  max-width: 600px;
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 16px;
+    padding-block: 8px;
+    border-bottom: 2px solid var(--clr-ui-seperator);
+    color: var(--clr-text);
+    margin-bottom: 16px;
+
+    & button {
+      background-color: var(--clr-canvas-bg);
+      border: none;
+      color: var(--clr-text);
+    }
+  }
+
+  .deleteBtn {
+    &:hover {
+      color: var(--clr-red);
+    }
+  }
+
+  ul {
+    display: grid;
+    & > * {
+      margin-bottom: 2rem;
+    }
+  }
+
+  li {
+    list-style: none;
+  }
+}

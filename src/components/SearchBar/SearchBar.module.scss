@@ -1,0 +1,22 @@
+.searchBar {
+  display: grid;
+  padding-inline: 8px;
+  padding-block: 8px;
+  border: 2px solid var(--clr-ui-seperator);
+  border-radius: var(--border-radius-btn);
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+
+  &__icon {
+    color: var(--clr-text-faded);
+  }
+  &__input {
+    border: none;
+    color: var(--clr-text-faded);
+    min-height: 100%;
+  }
+  ::placeholder {
+    color: var(--clr-text-faded);
+    opacity: 1;
+  }
+}

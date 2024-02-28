@@ -1,0 +1,23 @@
+.boardList {
+  display: grid;
+  gap: 16px;
+  &__heading {
+    color: var(--clr-text-faded);
+  }
+  &__headingGroup {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  ul {
+    display: grid;
+    gap: 16px;
+  }
+}
+
+.createNewBoardBtn {
+  background-color: var(--clr-accent);
+  color: var(--clr-ui-bg);
+  border: 1px solid var(--clr-accent);
+  border-radius: 4px;
+}
