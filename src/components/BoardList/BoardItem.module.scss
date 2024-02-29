@@ -7,9 +7,17 @@
   border-radius: var(--border-radius-btn);
   padding: 8px;
   color: var(--clr-text-faded);
+
+  input {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: var(--font-size-para);
+  }
 }
 
 .boardItemActive {
   border-color: var(--clr-accent);
+  color: var(--clr-accent);
   background-color: var(--clr-blue-hi);
 }

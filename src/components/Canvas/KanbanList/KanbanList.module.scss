@@ -12,7 +12,13 @@
     color: var(--clr-text);
     margin-bottom: 16px;
 
-    & button {
+    input {
+      font-size: var(--font-size-h4);
+      background-color: inherit;
+      border: none;
+    }
+
+    button {
       background-color: var(--clr-canvas-bg);
       border: none;
       color: var(--clr-text);

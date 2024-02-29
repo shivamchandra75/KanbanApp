@@ -219,8 +219,14 @@ const MainListSlice = createSlice({
     updateActiveBoard(state, action) {
       state.activeBoardIndex = action.payload;
     },
+    /////////////////////////////////////////////////
     boardList_addNewBoard(state) {
       state.boardList.push(newBoard());
+    },
+    /////////////////////////////////////////////////
+    board_updateName(state, action) {
+      const board = state.boardList[state.activeBoardIndex];
+      board.name = action.payload;
     },
     /////////////////////////////////////////////////
     canvas_addNewList(state) {
@@ -237,6 +243,11 @@ const MainListSlice = createSlice({
         (card) => card.id === action.payload.cardId,
       );
       targetList.cardList.splice(cardIndex, 1, action.payload.updatedCard);
+    },
+    /////////////////////////////////////////////////
+    list_updateName(state, action) {
+      const targetList = getTargetList(action.payload.listId, state);
+      targetList.name = action.payload.newName;
     },
     /////////////////////////////////////////////////
     list_addNewCard(state, action) {
@@ -282,11 +293,13 @@ const MainListSlice = createSlice({
 
 export const {
   boardList_addNewBoard,
+  board_updateName,
   canvas_deleteList,
   card_updateDetails,
   canvas_addNewList,
   list_addNewCard,
   list__deleteCard,
+  list_updateName,
   updateActiveBoard,
   handleDragDrop,
 } = MainListSlice.actions;
