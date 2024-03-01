@@ -8,9 +8,9 @@
   box-sizing: border-box;
 }
 
-html {
-  color-scheme: dark light;
-}
+// html {
+//   color-scheme: dark light;
+// }
 :root {
   --clr-body: hsl(212, 40%, 80%);
   --clr-ui-bg: hsl(212, 0%, 100%);
@@ -40,28 +40,28 @@ html {
   --border-radius-btn: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --clr-body: hsl(212, 30%, 25%);
-    --clr-ui-bg: hsl(212, 20%, 13%);
-    --clr-ui-seperator: hsl(212, 14%, 28%);
-    --clr-box-shadow: hsla(212, 14%, 20%, 0);
-    --clr-canvas-bg: hsl(212, 20%, 4%);
-    --clr-accent: hsl(212, 100%, 65%);
-    --clr-blue-hi: hsl(212, 80%, 20%);
-    --clr-red: hsl(0, 100%, 70%);
-    --clr-red-hi: hsl(0, 80%, 20%);
-    --clr-green: hsl(150, 100%, 70%);
-    --clr-green-hi: hsl(150, 80%, 20%);
-    --clr-yellow: hsl(48, 100%, 70%);
-    --clr-yellow-hi: hsl(48, 80%, 20%);
-    --clr-orange: hsl(22, 100%, 70%);
-    --clr-orange-hi: hsl(22, 80%, 20%);
-    --clr-text: hsl(212, 15%, 90%);
-    --clr-text-faded: hsl(212, 15%, 50%);
-    --clr-overlay: hsl(0, 0%, 50%, 0.3);
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --clr-body: hsl(212, 30%, 25%);
+//     --clr-ui-bg: hsl(212, 20%, 13%);
+//     --clr-ui-seperator: hsl(212, 14%, 28%);
+//     --clr-box-shadow: hsla(212, 14%, 20%, 0);
+//     --clr-canvas-bg: hsl(212, 20%, 4%);
+//     --clr-accent: hsl(212, 100%, 65%);
+//     --clr-blue-hi: hsl(212, 80%, 20%);
+//     --clr-red: hsl(0, 100%, 70%);
+//     --clr-red-hi: hsl(0, 80%, 20%);
+//     --clr-green: hsl(150, 100%, 70%);
+//     --clr-green-hi: hsl(150, 80%, 20%);
+//     --clr-yellow: hsl(48, 100%, 70%);
+//     --clr-yellow-hi: hsl(48, 80%, 20%);
+//     --clr-orange: hsl(22, 100%, 70%);
+//     --clr-orange-hi: hsl(22, 80%, 20%);
+//     --clr-text: hsl(212, 15%, 90%);
+//     --clr-text-faded: hsl(212, 15%, 50%);
+//     --clr-overlay: hsl(0, 0%, 50%, 0.3);
+//   }
+// }
 
 //the below block and until body.min-height makes it so that app takes full height on screen
 #root {

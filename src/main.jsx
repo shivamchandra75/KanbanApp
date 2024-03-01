@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import "./index.scss";
 import store from "./components/redux/store.js";
 import { Provider } from "react-redux";
+import "./components/firebase.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider store={store}>

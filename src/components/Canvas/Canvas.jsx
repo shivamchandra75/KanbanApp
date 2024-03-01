@@ -8,7 +8,7 @@ export default function Canvas() {
   const dispatch = useDispatch();
 
   function hanldeDragDrop(results) {
-    console.log(results);
+    // console.log(results);
     const { destination, source } = results;
     if (destination === null) return;
     if (
@@ -22,6 +22,7 @@ export default function Canvas() {
   const { boardList, activeBoardIndex } = useSelector(
     (state) => state.mainList,
   );
+
   const listCollection = boardList[activeBoardIndex].listCollection;
   return (
     <DragDropContext onDragEnd={hanldeDragDrop}>

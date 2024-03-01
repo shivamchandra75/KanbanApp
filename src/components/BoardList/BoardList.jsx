@@ -6,9 +6,11 @@ import { boardList_addNewBoard } from "../redux/MainListSlice";
 
 export default function BoardList() {
   const dispatch = useDispatch();
+
   function handleClick() {
     dispatch(boardList_addNewBoard());
   }
+
   const { boardList } = useSelector((state) => state.mainList);
   return (
     <div className={styles.boardList}>
@@ -18,11 +20,14 @@ export default function BoardList() {
           <Plus />
         </button>
       </div>
-      <ul>
-        {boardList.map((board, i) => (
-          <BoardItem key={board.id} index={i} board={board} />
-        ))}
-      </ul>
+
+      {boardList && (
+        <ul>
+          {boardList.map((board, i) => (
+            <BoardItem key={board.id} index={i} board={board} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

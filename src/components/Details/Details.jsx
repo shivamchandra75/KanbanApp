@@ -7,10 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 export default function Details() {
   const { boardList, activeBoardIndex } = useSelector(
-    (state) => state.mainList
+    (state) => state.mainList,
   );
-  const boardName = boardList[activeBoardIndex].name;
   const dispatch = useDispatch();
+
+  const boardName = boardList[activeBoardIndex].name;
   return (
     <div className={styles.detail}>
       <h3 className={styles.detail__board_name}>{boardName}</h3>
