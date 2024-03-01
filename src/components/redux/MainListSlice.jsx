@@ -1,82 +1,68 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
+import { setFirebaseState } from "../firebase";
 
-export const initialState = {};
+// export const initialState = {};
 
-// export const initialState = {
-//   activeBoardIndex: 0,
-//   boardList: [
-//     {
-//       id: uuidv4(), //board id
-//       name: "🔑 DEMO", //board name
-//       listCollection: [
-//         {
-//           id: uuidv4(), //list id
-//           name: "TODO", //list name
-//           cardList: [
-//             {
-//               id: uuidv4(), //card id
-//               imgSource: "/card-img.jpeg",
-//               heading: "Add card Heading",
-//               description: "Add card description",
-//               priority: "high",
-//               tag: "Add Tag",
-//               assignee: "assignee-1",
-//               deadline: "",
-//             },
-//             {
-//               id: uuidv4(),
-//               imgSource: "",
-//               heading: "Add card Heading",
-//               description: "Add card description",
-//               priority: "high",
-//               tag: "Add Tag",
-//               assignee: "assignee-3",
-//               deadline: "",
-//             },
-//           ],
-//         },
-//         {
-//           id: uuidv4(),
-//           name: "In Progress",
-//           cardList: [
-//             {
-//               id: uuidv4(),
-//               imgSource: "/card-img.jpeg",
-//               heading: "Add card Heading",
-//               description: "Add card description",
-//               priority: "low",
-//               tag: "Add Tag",
-//               assignee: "assignee-2",
-//               deadline: "March 1",
-//             },
-//           ],
-//         },
-//         {
-//           id: uuidv4(),
-//           name: "Done",
-//           cardList: [
-//             {
-//               id: uuidv4(),
-//               imgSource: "/card-img.jpeg",
-//               heading: "Add card Heading",
-//               description: "Add card description",
-//               priority: "low",
-//               tag: "Add Tag",
-//               assignee: "assignee-2",
-//               deadline: "March 1",
-//             },
-//           ],
-//         },
-//       ],
-//     },
-//     {
-//       id: uuidv4(),
-//       name: "New Board",
-//       listCollection: [],
-//     },
-//   ],
-// };
+export const initialState = {
+  activeBoardIndex: 0,
+  boardList: [
+    {
+      id: uuidv4(), //board id
+      name: "🔑 DEMO", //board name
+      listCollection: [
+        {
+          id: uuidv4(), //list id
+          name: "TODO", //list name
+          cardList: [
+            {
+              id: uuidv4(), //card id
+              imgSource: "/card-img.jpeg",
+              heading: "Add card Heading",
+              description: "Add card description",
+              priority: "high",
+              tag: "Add Tag",
+              assignee: "assignee-1",
+              deadline: "",
+            },
+          ],
+        },
+        {
+          id: uuidv4(),
+          name: "In Progress",
+          cardList: [
+            {
+              id: uuidv4(),
+              imgSource: "/card-img.jpeg",
+              heading: "Add card Heading",
+              description: "Add card description",
+              priority: "low",
+              tag: "Add Tag",
+              assignee: "assignee-2",
+              deadline: "March 1",
+            },
+          ],
+        },
+        {
+          id: uuidv4(),
+          name: "Done",
+          cardList: [
+            {
+              id: uuidv4(),
+              imgSource: "/card-img.jpeg",
+              heading: "Add card Heading",
+              description: "Add card description",
+              priority: "low",
+              tag: "Add Tag",
+              assignee: "assignee-2",
+              deadline: "March 1",
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
 
 function newList() {
   return {
@@ -219,8 +205,7 @@ const MainListSlice = createSlice({
   initialState,
   reducers: {
     getStateFromFireBase(state, action) {
-      console.log("🔥 FireBase", action.payload);
-      state = action.payload;
+      return action.payload;
     },
     /////////////////////////////////////////////////
     updateActiveBoard(state, action) {
@@ -285,6 +270,11 @@ const MainListSlice = createSlice({
       listCollection.splice(targetListIndex, 1);
     },
     /////////////////////////////////////////////////
+    saveInFirebase(state) {
+      console.log("firebase update Started");
+      setFirebaseState(state);
+    },
+    /////////////////////////////////////////////////
     handleDragDrop(state, action) {
       const { destination, source } = action.payload;
       const sourceList = getTargetList(source.droppableId, state).cardList;
@@ -309,6 +299,7 @@ export const {
   list__deleteCard,
   list_updateName,
   updateActiveBoard,
+  saveInFirebase,
   handleDragDrop,
 } = MainListSlice.actions;
 export default MainListSlice.reducer;

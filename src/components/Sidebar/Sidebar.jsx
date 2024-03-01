@@ -7,8 +7,11 @@ import styles from "./SideBar.module.scss";
 import Theme from "./Theme/Theme";
 import { useDispatch } from "react-redux";
 import { getData } from "../firebase";
+import { useSelector } from "react-redux";
 
 export default function Sidebar() {
+  //this will re-render this component when state is changed, note when state is changed all the components subscribed to any part of state will re-render as the whole state is changed.
+  // const state = useSelector((state) => state);
   const dispatch = useDispatch();
 
   useEffect(() => {

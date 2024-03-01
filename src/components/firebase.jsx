@@ -30,10 +30,27 @@ const db = getFirestore();
 const mainListRef = collection(db, "mainList");
 
 // Set Document
+export async function setInitialState(data) {
+  //check if 'mainlist' document already exists if yes we don't set data if no then we do
+  const docRef = doc(db, "mainList", "mainlist");
+  const docSnap = await getDoc(docRef);
 
-export async function saveInFirebase(data) {
+  if (docSnap.exists()) {
+    return;
+  }
   await setDoc(doc(db, "mainList", "mainlist"), data);
-  // console.log("🔥 Firebase Updated 🔥");
+  console.log("🔥 Firebase State Initialised 🔥");
+}
+
+setInitialState(data);
+
+export async function setFirebaseState(state) {
+  try {
+    await setDoc(doc(db, "mainList", "mainlist"), state);
+    console.log("✅ Firebase Updated ✅");
+  } catch (err) {
+    console.error("💥", err.message);
+  }
 }
 
 export function getData() {
@@ -46,22 +63,5 @@ export function getData() {
 
 // export function getData() {
 // return async function (dispatch) {
-// const docRef = doc(db, "mainList", "mainlist");
-// const docSnap = await getDoc(docRef);
-
-// if (docSnap.exists()) {
-//   dispatch(getStateFromFireBase(docSnap.data()));
-// }
 // };
 // }
-
-saveInFirebase(data);
-
-// getting data
-const querySnapshot = await getDocs(mainListRef);
-
-querySnapshot.forEach((doc) => {
-  // console.log(doc.id, "=>", doc.data());
-});
-
-// //single doc

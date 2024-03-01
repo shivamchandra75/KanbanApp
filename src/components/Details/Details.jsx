@@ -1,8 +1,7 @@
 import { Plus, Save, Settings } from "react-feather";
 import Button from "../Button/Button";
 import styles from "./Details.module.scss";
-// import { addNewList } from "../redux/MainListSlice";
-import { canvas_addNewList } from "../redux/MainListSlice";
+import { canvas_addNewList, saveInFirebase } from "../redux/MainListSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Details() {
@@ -24,7 +23,9 @@ export default function Details() {
         >
           New List
         </Button>
-        <Button icon={<Save />}>Save Progress</Button>
+        <Button icon={<Save />} onClick={() => dispatch(saveInFirebase())}>
+          Save Progress
+        </Button>
         <Button icon={<Settings />}>Settings</Button>
       </div>
     </div>
