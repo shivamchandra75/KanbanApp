@@ -64,12 +64,12 @@ html {
 }
 
 //the below block and until body.min-height makes it so that app takes full height on screen
-#root {
-  display: grid;
-}
+// #root {
+//   display: grid;
+// }
 
 body {
-  display: grid;
+  // display: grid;
   min-height: 100vh;
   padding: 20px;
   line-height: 1.25;

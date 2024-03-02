@@ -1,4 +1,6 @@
 .section_right {
   display: grid;
   grid-template-rows: auto 1fr;
+  height: 95vh;
+  overflow: scroll;
 }

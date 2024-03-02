@@ -12,6 +12,9 @@
   ul {
     display: grid;
     gap: 16px;
+    align-content: baseline;
+    height: 50vh;
+    overflow: scroll;
   }
 }
 

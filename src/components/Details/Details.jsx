@@ -26,7 +26,7 @@ export default function Details() {
         <Button icon={<Save />} onClick={() => dispatch(saveInFirebase())}>
           Save Progress
         </Button>
-        <Button icon={<Settings />}>Settings</Button>
+        {/* <Button icon={<Settings />}>Settings</Button> */}
       </div>
     </div>
   );

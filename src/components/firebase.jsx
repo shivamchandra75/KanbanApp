@@ -38,6 +38,7 @@ export async function setInitialState(data) {
   if (docSnap.exists()) {
     return;
   }
+
   await setDoc(doc(db, "mainList", "mainlist"), data);
   console.log("🔥 Firebase State Initialised 🔥");
 }
@@ -60,8 +61,3 @@ export function getData() {
     });
   };
 }
-
-// export function getData() {
-// return async function (dispatch) {
-// };
-// }

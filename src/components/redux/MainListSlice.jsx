@@ -216,6 +216,10 @@ const MainListSlice = createSlice({
       state.boardList.push(newBoard());
     },
     /////////////////////////////////////////////////
+    boardList_deleteBoard(state, action) {
+      state.boardList.splice(action.payload, 1);
+    },
+    /////////////////////////////////////////////////
     board_updateName(state, action) {
       const board = state.boardList[state.activeBoardIndex];
       board.name = action.payload;
@@ -292,6 +296,7 @@ export const {
   getStateFromFireBase,
   boardList_addNewBoard,
   board_updateName,
+  boardList_deleteBoard,
   canvas_deleteList,
   card_updateDetails,
   canvas_addNewList,
