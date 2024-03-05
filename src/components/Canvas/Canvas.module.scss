@@ -1,11 +1,10 @@
 .canvas {
   display: grid;
   grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, 23vw);
   gap: 32px;
   background-color: var(--clr-canvas-bg);
   border-bottom-right-radius: 16px;
-  padding: 32px;
-  // padding-top: 32px;
-  // padding-left: 32px;
+  padding: 24px;
   overflow: scroll;
 }

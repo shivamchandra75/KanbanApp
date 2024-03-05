@@ -6,7 +6,7 @@
   padding-block: 0.5rem;
   padding-inline: 1rem;
   border-radius: var(--border-radius-btn);
-  border: 1px solid;
+  border: 0.5px solid;
 
   //for increasing specifity as icon library used provides display-inline block and display block in index.scss has lower specificity
   svg {

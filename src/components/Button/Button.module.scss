@@ -11,11 +11,11 @@
 
 .gray {
   justify-self: flex-end;
-  border: 2px solid var(--clr-ui-seperator);
+  border: 1px solid var(--clr-ui-seperator);
   color: var(--clr-text-faded);
 }
 .blue {
-  border: 2px solid var(--clr-accent);
+  border: 1px solid var(--clr-accent);
   color: var(--clr-accent);
   justify-self: flex-start;
   &:hover {

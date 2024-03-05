@@ -1,7 +1,7 @@
 .list {
-  width: 25vw;
-  min-width: 400px;
-  max-width: 600px;
+  // width: 25vw;
+  min-width: 22vw;
+  // max-width: 600px;
 
   &__header {
     display: grid;
@@ -46,7 +46,7 @@
     width: 100%;
     padding: 1rem;
     background-color: transparent;
-    border: 1px dashed;
+    border: 1px dashed var(--clr-text);
     border-radius: var(--border-radius-btn);
     svg {
       margin-inline: auto;

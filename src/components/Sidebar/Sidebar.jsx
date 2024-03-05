@@ -7,7 +7,7 @@ import styles from "./SideBar.module.scss";
 import Theme from "./Theme/Theme";
 import { useDispatch } from "react-redux";
 import { getData } from "../firebase";
-import { useSelector } from "react-redux";
+import SaveDataPopup from "../saveDataPopup/SaveDataPopup";
 
 export default function Sidebar() {
   //this will re-render this component when state is changed, note when state is changed all the components subscribed to any part of state will re-render as the whole state is changed.
@@ -23,8 +23,15 @@ export default function Sidebar() {
       <Logo />
       <SearchBar />
       <BoardList />
+      <a
+        href="https://dribbble.com/shots/21326984-Kanban-Board-Whitespace-UI-4"
+        target="_blank"
+        rel="noreferrer"
+      >
+        • Design Inspiration •
+      </a>
       <Theme />
-      <Logout />
+      <SaveDataPopup />
     </div>
   );
 }

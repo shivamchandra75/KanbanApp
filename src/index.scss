@@ -9,8 +9,9 @@
 }
 
 html {
-  color-scheme: dark light;
+  color-scheme: light dark;
 }
+
 :root {
   --clr-body: hsl(212, 40%, 80%);
   --clr-ui-bg: hsl(212, 0%, 100%);
@@ -42,11 +43,11 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --clr-body: hsl(212, 30%, 25%);
-    --clr-ui-bg: hsl(212, 20%, 13%);
+    --clr-body: hsl(212, 30%, 30%);
+    --clr-ui-bg: hsl(212, 20%, 10%);
     --clr-ui-seperator: hsl(212, 14%, 28%);
     --clr-box-shadow: hsla(212, 14%, 20%, 0);
-    --clr-canvas-bg: hsl(212, 20%, 4%);
+    --clr-canvas-bg: hsl(212, 16%, 16%);
     --clr-accent: hsl(212, 100%, 65%);
     --clr-blue-hi: hsl(212, 80%, 20%);
     --clr-red: hsl(0, 100%, 70%);
@@ -57,19 +58,57 @@ html {
     --clr-yellow-hi: hsl(48, 80%, 20%);
     --clr-orange: hsl(22, 100%, 70%);
     --clr-orange-hi: hsl(22, 80%, 20%);
-    --clr-text: hsl(212, 15%, 90%);
+    --clr-text: hsl(212, 15%, 85%);
     --clr-text-faded: hsl(212, 15%, 50%);
     --clr-overlay: hsl(0, 0%, 50%, 0.3);
   }
 }
 
-//the below block and until body.min-height makes it so that app takes full height on screen
-// #root {
-//   display: grid;
-// }
+.dark {
+  color-scheme: dark;
+  --clr-body: hsl(212, 30%, 30%);
+  --clr-ui-bg: hsl(212, 20%, 10%);
+  --clr-ui-seperator: hsl(212, 14%, 28%);
+  --clr-box-shadow: hsla(212, 14%, 20%, 0);
+  --clr-canvas-bg: hsl(212, 16%, 16%);
+  --clr-accent: hsl(212, 100%, 65%);
+  --clr-blue-hi: hsl(212, 80%, 20%);
+  --clr-red: hsl(0, 100%, 70%);
+  --clr-red-hi: hsl(0, 80%, 20%);
+  --clr-green: hsl(150, 100%, 70%);
+  --clr-green-hi: hsl(150, 80%, 20%);
+  --clr-yellow: hsl(48, 100%, 70%);
+  --clr-yellow-hi: hsl(48, 80%, 20%);
+  --clr-orange: hsl(22, 100%, 70%);
+  --clr-orange-hi: hsl(22, 80%, 20%);
+  --clr-text: hsl(212, 15%, 85%);
+  --clr-text-faded: hsl(212, 15%, 50%);
+  --clr-overlay: hsl(0, 0%, 50%, 0.3);
+}
+
+.light {
+  color-scheme: light;
+  --clr-body: hsl(212, 40%, 80%);
+  --clr-ui-bg: hsl(212, 0%, 100%);
+  --clr-ui-seperator: hsl(212, 14%, 80%);
+  --clr-box-shadow: hsla(212, 14%, 80%, 0.5);
+  --clr-canvas-bg: hsl(212, 14%, 95%);
+  --clr-accent: hsl(212, 100%, 45%);
+  --clr-blue-hi: hsl(212, 100%, 90%);
+  --clr-red: hsl(0, 100%, 41%);
+  --clr-red-hi: hsl(0, 100%, 95%);
+  --clr-green: hsl(150, 100%, 37%);
+  --clr-green-hi: hsl(150, 100%, 92%);
+  --clr-yellow: hsl(48, 100%, 45%);
+  --clr-yellow-hi: hsl(48, 100%, 92%);
+  --clr-orange: hsl(22, 100%, 50%);
+  --clr-orange-hi: hsl(22, 100%, 92%);
+  --clr-text: hsl(212, 15%, 15%);
+  --clr-text-faded: hsl(212, 15%, 45%);
+  --clr-overlay: hsl(0, 0%, 0%, 0.3);
+}
 
 body {
-  // display: grid;
   min-height: 100vh;
   padding: 20px;
   line-height: 1.25;
@@ -81,6 +120,7 @@ body {
 input {
   background-color: var(--clr-ui-bg);
   border: 1px dotted var(--clr-ui-seperator);
+  color: var(--clr-text);
 }
 button {
   font-size: var(--font-size-para);
@@ -139,11 +179,13 @@ p {
 }
 
 .logo {
+  --font-size-h3: 39px;
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
   justify-items: flex-start;
   font-size: var(--font-size-h3);
+  line-height: 1;
 }
 
 .logo__text {
@@ -152,4 +194,9 @@ p {
 
 button {
   cursor: pointer;
+}
+
+.show-popup {
+  display: grid !important;
+  place-content: center !important;
 }

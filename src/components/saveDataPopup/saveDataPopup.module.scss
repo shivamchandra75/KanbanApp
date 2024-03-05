@@ -1,0 +1,32 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  // place-content: center;
+  backdrop-filter: blur(8px);
+  background-color: var(--clr-overlay);
+  // opacity: 0;
+  // pointer-events: none;
+}
+.popup {
+  width: 20vw;
+  margin: auto;
+  padding: 1rem;
+  background-color: var(--clr-ui-bg);
+  border-radius: var(--border-radius-btn);
+  font-size: 40px;
+  text-align: center;
+}
+
+.icon {
+  color: var(--clr-green);
+  & > svg {
+    display: block;
+    width: 50%;
+    height: 100%;
+    margin-inline: auto;
+  }
+}

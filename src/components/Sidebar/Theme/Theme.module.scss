@@ -1,6 +1,29 @@
 .themeBtn {
-  border: 2px solid var(--clr-ui-seperator);
+  border: 1px solid var(--clr-ui-seperator);
   border-radius: var(--border-radius-btn);
   padding: 8px;
   background-color: var(--clr-canvas-bg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.lightMode,
+.darkMode {
+  background-color: unset;
+  border: none;
+  padding: 0.5rem;
+  border-radius: inherit;
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  & > * {
+    pointer-events: none;
+  }
+}
+
+.active {
+  background-color: var(--clr-ui-seperator);
 }

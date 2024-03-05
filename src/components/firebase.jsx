@@ -48,7 +48,9 @@ setInitialState(data);
 export async function setFirebaseState(state) {
   try {
     await setDoc(doc(db, "mainList", "mainlist"), state);
-    console.log("✅ Firebase Updated ✅");
+    const savedPopup = document.getElementById("save-popup");
+    savedPopup.classList.toggle("show-popup");
+    // savedPopup.style.opacity = "1";
   } catch (err) {
     console.error("💥", err.message);
   }

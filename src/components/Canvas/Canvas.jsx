@@ -6,7 +6,6 @@ import { handleDragDrop } from "../redux/MainListSlice";
 
 export default function Canvas() {
   const dispatch = useDispatch();
-
   function hanldeDragDrop(results) {
     // console.log(results);
     const { destination, source } = results;

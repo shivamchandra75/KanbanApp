@@ -6,7 +6,6 @@ import {
   Image,
   PriorityHigh,
   Sell,
-  Tag,
   Title,
 } from "@mui/icons-material";
 import styles from "./Popup.module.scss";
