@@ -121,7 +121,7 @@ export default function Popup({ listId, card, setIsPopupOpen }) {
             <input
               type="text"
               value={assignee}
-              placeholder="choose one => assignee-1 | assignee-2 | assignee-3 | assignee-4"
+              placeholder="choose one => shivam | john | mark | lucy"
               onChange={(e) => handleChange(e, setAssignee)}
             />
           </div>

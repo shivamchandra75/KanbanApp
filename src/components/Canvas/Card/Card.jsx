@@ -15,15 +15,15 @@ export default function Card({ listId, card, index }) {
   const dispatch = useDispatch();
 
   const assigneePic =
-    card.assignee === "assignee-1"
-      ? "./assignee-1.jpeg"
-      : card.assignee === "assignee-2"
-        ? "assignee-2.png"
-        : card.assignee === "assignee-3"
-          ? "assignee-3.png"
-          : card.assignee === "assignee-4"
-            ? "./assignee-4.png"
-            : "./assignee-1.jpeg";
+    card.assignee === "shivam"
+      ? "./shivam.jpeg"
+      : card.assignee === "john"
+        ? "john.png"
+        : card.assignee === "mark"
+          ? "mark.png"
+          : card.assignee === "lucy"
+            ? "./lucy.png"
+            : "./shivam.jpeg";
 
   function deleteCard() {
     dispatch(list__deleteCard({ listId, cardId: card.id }));

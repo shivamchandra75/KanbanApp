@@ -31,6 +31,9 @@
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 8px;
+    p {
+      text-transform: capitalize;
+    }
   }
   &__deleteIcon {
     background-color: transparent;
@@ -59,5 +62,9 @@
     max-width: 48px;
     border-radius: 50%;
     overflow: hidden;
+  }
+
+  span {
+    text-transform: capitalize;
   }
 }
