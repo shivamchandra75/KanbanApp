@@ -31,13 +31,11 @@ const mainListRef = collection(db, "mainList");
 
 // Set Document
 export async function setInitialState(data) {
-  //check if 'mainlist' document already exists if yes we don't set data if no then we do
+  //check if 'mainlist' document already exists if yes we don't set data if no then we do set data
   const docRef = doc(db, "mainList", "mainlist");
   const docSnap = await getDoc(docRef);
 
-  if (docSnap.exists()) {
-    return;
-  }
+  if (docSnap.exists()) return;
 
   await setDoc(doc(db, "mainList", "mainlist"), data);
   console.log("🔥 Firebase State Initialised 🔥");
@@ -47,6 +45,7 @@ setInitialState(data);
 
 export async function setFirebaseState(state) {
   try {
+    console.log("popup");
     await setDoc(doc(db, "mainList", "mainlist"), state);
     const savedPopup = document.getElementById("save-popup");
     savedPopup.classList.toggle("show-popup");

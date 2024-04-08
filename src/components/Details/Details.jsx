@@ -11,6 +11,7 @@ export default function Details() {
   const dispatch = useDispatch();
 
   const boardName = boardList[activeBoardIndex].name;
+
   return (
     <div className={styles.detail}>
       <h3 className={styles.detail__board_name}>{boardName}</h3>
@@ -23,10 +24,10 @@ export default function Details() {
         >
           New List
         </Button>
+
         <Button icon={<Save />} onClick={() => dispatch(saveInFirebase())}>
           Save Progress
         </Button>
-        {/* <Button icon={<Settings />}>Settings</Button> */}
       </div>
     </div>
   );

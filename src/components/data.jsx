@@ -4,7 +4,7 @@ export const data = {
   boardList: [
     {
       id: uuidv4(), //board id
-      name: "🔑 DEMO", //board name
+      name: "🔴 DEMO", //board name
       listCollection: [
         {
           id: uuidv4(), //list id
@@ -12,22 +12,13 @@ export const data = {
           cardList: [
             {
               id: uuidv4(), //card id
-              imgSource: "/card-img.jpeg",
-              heading: "Add card Heading",
-              description: "Add card description",
+              imgSource: "/react.svg",
+              heading: "Built Using React.js",
+              description:
+                "I have Build multiple projects using react js(Javascript library.)",
               priority: "high",
               tag: "Add Tag",
               assignee: "assignee-1",
-              deadline: "",
-            },
-            {
-              id: uuidv4(),
-              imgSource: "",
-              heading: "Add card Heading",
-              description: "Add card description",
-              priority: "high",
-              tag: "Add Tag",
-              assignee: "assignee-3",
               deadline: "",
             },
           ],
@@ -38,8 +29,8 @@ export const data = {
           cardList: [
             {
               id: uuidv4(),
-              imgSource: "/card-img.jpeg",
-              heading: "Add card Heading",
+              imgSource: "/redux.svg",
+              heading: "Redux(RTK) | Remote state management",
               description: "Add card description",
               priority: "low",
               tag: "Add Tag",
@@ -54,8 +45,8 @@ export const data = {
           cardList: [
             {
               id: uuidv4(),
-              imgSource: "/card-img.jpeg",
-              heading: "Add card Heading",
+              imgSource: "/firebase.svg",
+              heading: "Firebase | Save data b/w reloads",
               description: "Add card description",
               priority: "low",
               tag: "Add Tag",
@@ -65,11 +56,6 @@ export const data = {
           ],
         },
       ],
-    },
-    {
-      id: uuidv4(),
-      name: "New Board",
-      listCollection: [],
     },
   ],
 };

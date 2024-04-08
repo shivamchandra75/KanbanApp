@@ -43,11 +43,11 @@ export default function Card({ listId, card, index }) {
           id={card.id}
         >
           <div className={styles.card} onClick={(e) => handlePopup(e)}>
-            <div className={styles.card__img}>
-              {card.imgSource && (
+            {card.imgSource && (
+              <div className={styles.card__img}>
                 <img src={card.imgSource} alt="---Incorrect Image URL" />
-              )}
-            </div>
+              </div>
+            )}
 
             <h4 className={styles.card__heading}>{card.heading}</h4>
 
